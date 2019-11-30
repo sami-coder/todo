@@ -1,0 +1,17 @@
+<h1>Update Menu Item</h1>
+
+<div class="container">
+
+    <fieldset class="form-group">
+        <label>Entree Name</label>
+        <input type="text" [(ngModel)]="name" class="form-control" name="name" required="required">
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Price</label>
+        <input type="number" [(ngModel)]="price" class="form-control" name="price" required="required">
+    </fieldset>
+    <button (click)=updateEntreeSuccess() class="btn btn-success"> Update Menu Item </button>
+    <button (click)=updateEntreeCancel() class="btn btn-warning"> Cancel </button>
+
+
+</div>

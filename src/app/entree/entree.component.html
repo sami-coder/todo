@@ -1,0 +1,32 @@
+<h1>My Menu</h1>
+
+<div class="container">
+<table class="table">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Recipe</th>
+        <th>Edit</th>
+        <th>Remove</th>
+        <!-- <th>Entree</th> -->
+        <!-- <th>Inventory</th> -->
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let entree of entrees">
+        <td>{{entree.id}}</td>
+        <td>{{entree.name}}</td>
+        <td>${{entree.price}}</td>
+        <td> <button  (click)=showRecipe(entree.id) class="btn btn-primary"> Recipe </button></td>
+        <td> <button (click)=editEntree(entree.id) class="btn btn-secondary"> Edit </button> </td>
+        <td> <button (click)=removeEntree(entree.id) class="btn btn-warning"> Delete </button></td>
+        <!-- <td button (click)=showentree(restaurant.id) class="btn btn-success">View Entree</td> -->
+        <!-- <td button class="btn btn-success">View Inventory</td> -->
+    </tr>
+</tbody>
+</table>
+<button class="btn btn-success" (click)=addEntree() > Add new Menu Item </button>
+
+</div>

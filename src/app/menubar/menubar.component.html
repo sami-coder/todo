@@ -1,0 +1,29 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+         <font color="White" size="5">  Restaurant Management System </font>
+
+        <ul class="navbar-nav">
+            <!-- <li><a *ngIf="hardcodedAuthentication.isUserLogedin()" routerLink="/homepage/sumit" class="nav-link">Home</a></li>
+            <li><a *ngIf="hardcodedAuthentication.isUserLogedin()" routerLink="/restaurant" class="nav-link">Restaurant</a></li> -->
+
+            <li><a *ngIf="hardcodedAuthentication.isUserLogedin()" routerLink="homepage" class="nav-link">Home</a></li>
+            <li><a *ngIf="hardcodedAuthentication.isUserLogedin()" routerLink="restaurant" class="nav-link">Restaurant</a></li>
+        </ul>
+
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+                <!-- <div ng-init="notiOON = 'notificationOn.png'", ng-init="notiOFF = 'notificationOff.png'">
+                
+            <li><img ng-src="{{notiOFF}}"></li></div> -->
+            <li><img *ngIf="hardcodedAuthentication.isUserLogedin()" src="assets/notification_on.png" routerLink="homepage" width="30"  height="30"></li>
+            <li><img *ngIf="!hardcodedAuthentication.isUserLogedin()" src="assets/notification_off.png" width="30"  height="30"></li>
+            <li><a *ngIf="!hardcodedAuthentication.isUserLogedin()" routerLink="login" class="nav-link">Login</a></li>
+            <li><a *ngIf="hardcodedAuthentication.isUserLogedin()" routerLink="logout" class="nav-link">Logout</a></li>
+        </ul>
+
+
+
+    </nav>
+
+    <!-- href="http://localhost:4200/login" class="navbar-brand" -->
+
+</header>

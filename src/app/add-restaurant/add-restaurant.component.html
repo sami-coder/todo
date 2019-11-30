@@ -1,0 +1,17 @@
+<h1>Add New Restaurant</h1>
+
+<div class="container">
+
+    <fieldset class="form-group">
+        <label>Restaurant</label>
+        <input type="text" [(ngModel)]="name" class="form-control" name="name" required="required">
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Address of the Restaurant</label>
+        <input type="text" [(ngModel)]="address" class="form-control" name="address" required="required">
+    </fieldset>
+    <button (click)=addRestaurantSuccess() class="btn btn-success"> Add new Restaurant </button>
+    <button (click)=addRestaurantCancel() class="btn btn-warning"> Cancel </button>
+
+
+</div>

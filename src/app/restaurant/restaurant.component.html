@@ -1,0 +1,36 @@
+<h1>My Restaurants</h1>
+
+<div class="container">
+<table class="table">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Menu</th>
+        <th>Inventory</th>
+        <th>Place Order</th>
+        <!-- <th>Edit</th> -->
+        <th>Remove</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let restaurant of restaurants">
+        <td>{{restaurant.id}}</td>
+        <td>{{restaurant.name}}</td>
+        <td> {{restaurant.address}}</td>
+        <td><button (click)=showentree(restaurant.id) class="btn btn-success">View Menu Items</button></td>
+        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        <td><button (click)=showinventory(restaurant.id) class="btn btn-success">View Inventory</button></td>
+        <td><button (click)=placeOrder(restaurant.id) class="btn btn-primary">Place order</button></td>
+
+        <!-- <td><button (click)=editRestaurant(restaurant.id) class="btn btn-secondary">Edit Restaurant</button></td> -->
+        <td><button (click)=removeRestaurant(restaurant.id) class="btn btn-warning">Delete</button></td>
+
+        <!-- <td button class="btn btn-success">View Inventory</td> -->
+    </tr>
+</tbody>
+</table>
+<button class="btn btn-success" (click) = addRestaurant()> Add new Restaurant </button>
+
+</div>

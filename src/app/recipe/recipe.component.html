@@ -1,0 +1,34 @@
+<h1>My recipe</h1>
+
+<div class="container">
+<table class="table">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Inventory Name</th>
+        <th>Quantity</th>
+        <!-- <th>Entree ID</th>
+        <th>Inventory ID</th> -->
+        <th>Delete</th>
+        <!-- <th>Entree</th> -->
+        <!-- <th>Inventory</th> -->
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let recipe of recipes">
+        <td>{{recipe.id}}</td>
+        <td>{{recipe.name}}</td>
+        <td>{{recipe.quantity}}</td>
+        <!-- <td>{{recipe.entree_domain_id}}</td>
+        <td>{{recipe.inventory_domain_id}}</td> -->
+        <td> <button (click)=removeRecipe(recipe.id) class="btn btn-warning"> Delete </button></td>
+        <!-- <td button (click)=showentree(restaurant.id) class="btn btn-success">View Entree</td> -->
+        <!-- <td button class="btn btn-success">View Inventory</td> -->
+    </tr>
+</tbody>
+</table>
+<button class="btn btn-success" (click)=addRecipe() > Add new recipe </button>
+<button class="btn btn-success" (click)=goBack() > Done </button>
+
+
+</div>
