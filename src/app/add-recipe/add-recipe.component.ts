@@ -37,6 +37,7 @@ export class AddRecipeComponent implements OnInit {
   recipe: Recipe123
   inventoryDomain: Inventory_Domain
   entreeDomain: Entree_Domain
+  recipeName:any
 
   constructor(
     private route:ActivatedRoute,
@@ -50,6 +51,7 @@ export class AddRecipeComponent implements OnInit {
   ngOnInit() {
     // this.entreeID = this.route.snapshot.params['id'];
     this.entreeID=sessionStorage.getItem('entreeRecipeID');
+    this.recipeName=sessionStorage.getItem('DishName');
 
 
     this.id = sessionStorage.getItem('restaurantID');

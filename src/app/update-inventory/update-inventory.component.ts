@@ -5,6 +5,7 @@ export class Inventory123 {
   constructor(
     public id : any,
     public quantity: number,
+    public quantityType: any,
     public threshold: number,
     public itemName: string,
     public restaurantDomain?: Restaurant_id
@@ -29,6 +30,7 @@ export class UpdateInventoryComponent implements OnInit {
   inventoryID: any
   inventory: any
   itemName: any
+  quantityType: any
   quantity: any
   threshold: any
   inventory123: Inventory123
@@ -51,6 +53,7 @@ export class UpdateInventoryComponent implements OnInit {
         this.inventoryID = this.inventory.id;
         this.itemName = this.inventory.itemName;
         this.quantity = this.inventory.quantity;
+        this.quantityType = this.inventory.quantityType;
         this.threshold = this.inventory.threshold;
       });
 
@@ -60,7 +63,7 @@ export class UpdateInventoryComponent implements OnInit {
 
     this.restaurantDomain = new Restaurant_id(this.restaurant_id);
 
-    this.inventory123 = new Inventory123(this.inventoryID, this.quantity, this.threshold,this.itemName, this.restaurantDomain);
+    this.inventory123 = new Inventory123(this.inventoryID, this.quantity, this.quantityType, this.threshold,this.itemName, this.restaurantDomain);
 
     this.retriveInventoryService.putSingleInventory(this.inventory123).subscribe(data =>{
       console.log(data)

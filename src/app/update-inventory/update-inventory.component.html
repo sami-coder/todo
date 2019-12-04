@@ -11,6 +11,17 @@
         <input type="number" [(ngModel)]="quantity" class="form-control" name="quantity" required="required">
     </fieldset>
     <fieldset class="form-group">
+        <label>Quantity Type</label>
+
+        <select [(ngModel)]="quantityType">
+            <option value="">--Select--</option>
+            <option value="Kg">Kg</option>
+            <option value="Litre">Litre</option>
+            <option value="Piece">Piece</option>
+        </select>
+        <!-- <button (click)=testing() class="btn btn-success"> Atest </button> -->
+    </fieldset>
+    <fieldset class="form-group">
         <label>Threshold</label>
         <input type="number" [(ngModel)]="threshold" class="form-control" name="threshold" required="required">
     </fieldset>

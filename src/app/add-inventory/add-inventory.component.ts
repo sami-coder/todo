@@ -6,6 +6,7 @@ import { RetriveInventoryService } from '../service/retrive-inventory.service';
 export class Inventory123 {
   constructor(
     public quantity: number,
+    public quantityType: any,
     public threshold: number,
     public itemName: string,
     public restaurantDomain?: Restaurant_id
@@ -29,10 +30,18 @@ export class AddInventoryComponent implements OnInit {
   itemName : any
   threshold: any
   quantity: any
+  quantityType : any
   addInventory : Inventory
   inventory123: Inventory123
   restaurantDomain: Restaurant_id
 
+  //   <select ng-model="osType">
+//     <option value=" ">Choose OS</option>
+//     <option ng-repeat="o in operatingsystems">{{o}}</option>
+// </select>
+// $scope.operatingsystems = ["Ubuntu-16", "Centos 7", "Wimdows"];
+
+  // inventorytype = ["Litter", "Kg"];
   
   constructor(
     private route:ActivatedRoute,
@@ -42,11 +51,11 @@ export class AddInventoryComponent implements OnInit {
 
   ngOnInit() {
     // this.id = this.route.snapshot.params['id'];
-    this.id = sessionStorage.getItem('restaurantID');
+    this.id = sessionStorage.getItem('showInventory');
     console.log(this.id)
     this.restaurantDomain = new Restaurant_id(this.id);
 
-    this.inventory123 = new Inventory123(this.quantity, this.threshold,this.itemName, this.restaurantDomain);
+    this.inventory123 = new Inventory123(this.quantity, this.quantityType, this.threshold,this.itemName, this.restaurantDomain);
 
     console.log(this.id)
 
@@ -55,12 +64,13 @@ export class AddInventoryComponent implements OnInit {
   addInventSuccess(){
     // console.log(this.restaurant_id)
     // console.log(this.restaurant_id)
-    this.id = sessionStorage.getItem('restaurantID');
+    this.id = sessionStorage.getItem('showInventory');
 
     this.restaurantDomain = new Restaurant_id(this.id);
 
-    this.inventory123 = new Inventory123(this.quantity, this.threshold,this.itemName, this.restaurantDomain);
+    this.inventory123 = new Inventory123(this.quantity, this.quantityType, this.threshold,this.itemName, this.restaurantDomain);
 
+    console.log(this.inventory123);
     this.retriveInventory.postInventory(this.inventory123).subscribe(data =>{
       console.log(data)
       this.router.navigate(['inventory']);
@@ -70,5 +80,9 @@ export class AddInventoryComponent implements OnInit {
   }
   addInventCancel(){
     this.router.navigate(['inventory']);
+  }
+
+  testing(){
+    console.log(this.quantityType);
   }
 }

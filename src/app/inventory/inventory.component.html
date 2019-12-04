@@ -1,4 +1,4 @@
-<h1>My Inventory</h1>
+<h1>Inventory of {{restoname}}</h1>
 
 <div class="container">
 <table class="table">
@@ -7,6 +7,7 @@
         <th>Id</th>
         <th>Name</th>
         <th>Quantity</th>
+        <th>Quantity Type</th>
         <th>Threshold</th>
         <th>Edit</th>
         <th>Remove</th>
@@ -15,10 +16,12 @@
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let inventory of inventories">
-        <td>{{inventory.id}}</td>
+    <tr *ngFor="let inventory of inventories; let i=index">
+        <td>{{i+1}}</td>
+        <!-- <td>{{inventory.id}}</td> -->
         <td>{{inventory.itemName}}</td>
         <td>{{inventory.quantity}}</td>
+        <td>{{inventory.quantityType}}</td>
         <td>{{inventory.threshold}}</td>
         <td> <button (click)=editInv(inventory.id) class="btn btn-secondary"> Edit </button> </td>
         <td> <button (click)=removeInv(inventory.id) class="btn btn-warning"> Delete </button> </td>

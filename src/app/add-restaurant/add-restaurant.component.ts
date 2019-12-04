@@ -5,7 +5,11 @@ import { RetriveRestaurantService } from '../service/retrive-restaurant.service'
 export class Restaurant123 {
   constructor(
     public name: string,
-    public address: string,
+    public street: string,
+    public street2: string,
+    public city: string,
+    public state: string,
+    public postal: string,
     public userDomain?: User_id
   ) { }
 }
@@ -25,7 +29,11 @@ export class AddRestaurantComponent implements OnInit {
 
   id : any
   name : any
-  address : any
+  street : any
+  street2 : any
+  city : any
+  state : any
+  postal : any
   userDomain: User_id
   restaurant123: Restaurant123
 
@@ -41,7 +49,7 @@ export class AddRestaurantComponent implements OnInit {
     console.log(this.id)
     this.userDomain = new User_id(this.id);
 
-    this.restaurant123 = new Restaurant123(this.name, this.address, this.userDomain);
+    this.restaurant123 = new Restaurant123(this.name, this.street, this.street2, this.city,this.state,this.postal, this.userDomain);
   }
 
   addRestaurantSuccess(){
@@ -51,7 +59,7 @@ export class AddRestaurantComponent implements OnInit {
     console.log(this.id)
     this.userDomain = new User_id(this.id);
 
-    this.restaurant123 = new Restaurant123(this.name, this.address, this.userDomain);
+    this.restaurant123 = new Restaurant123(this.name, this.street, this.street2, this.city,this.state,this.postal, this.userDomain);
 
     console.log(this.restaurant123);
     this.retriveRestaurant.postRestaurant(this.restaurant123).subscribe(data =>{

@@ -12,6 +12,7 @@ export class RecipeComponent implements OnInit {
   id:any
   recipes:any
   reciipeId:any
+  recipeName:any
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class RecipeComponent implements OnInit {
 
   ngOnInit() {
     this.id=sessionStorage.getItem('entreeRecipeID');
+    this.recipeName=sessionStorage.getItem('DishName');
     // this.id=this.route.snapshot.params['id']
     this.getRecipeagain();
     sessionStorage.getItem('restaurantID');

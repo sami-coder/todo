@@ -1,4 +1,4 @@
-<h1>Add recipe</h1>
+<h1>Add ingredients for {{recipeName}}</h1>
 
 <div class="container">
 <table class="table">
@@ -14,7 +14,8 @@
 </thead>
 <tbody>
     <tr *ngFor="let inventory of inventories ; let i = index">
-        <td>{{inventory.id}}</td>
+        <td>{{i+1}}</td>
+        <!-- <td>{{inventory.id}}</td> -->
         <td>{{inventory.itemName}}</td>
         <td>
             <input type="number" [(ngModel)]="subQuantity" class="form-control" name="subQuantity[i]" required="required" >

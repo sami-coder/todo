@@ -6,7 +6,11 @@
     <tr>
         <th>Id</th>
         <th>Name</th>
-        <th>Address</th>
+        <th>Address Line 1</th>
+        <th>Address Line 2</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
         <th>Menu</th>
         <th>Inventory</th>
         <th>Place Order</th>
@@ -15,11 +19,16 @@
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let restaurant of restaurants">
-        <td>{{restaurant.id}}</td>
+    <tr *ngFor="let restaurant of restaurants; let i=index">
+        <td>{{i+1}}</td>
+        <!-- <td>{{restaurant.id}}</td> -->
         <td>{{restaurant.name}}</td>
-        <td> {{restaurant.address}}</td>
-        <td><button (click)=showentree(restaurant.id) class="btn btn-success">View Menu Items</button></td>
+        <td> {{restaurant.street}}</td>
+        <td> {{restaurant.street2}}</td>
+        <td> {{restaurant.city}}</td>
+        <td> {{restaurant.state}}</td>
+        <td> {{restaurant.postal}}</td>
+        <td><button (click)=showentree(restaurant.id,restaurant.name) class="btn btn-success">View Menu Items</button></td>
         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
         <td><button (click)=showinventory(restaurant.id) class="btn btn-success">View Inventory</button></td>
         <td><button (click)=placeOrder(restaurant.id) class="btn btn-primary">Place order</button></td>

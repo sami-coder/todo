@@ -6,6 +6,7 @@ export class Inventory {
   constructor(
     public restaurant_id:number,
     public quantity: number,
+    public quantityType: any,
     public threshold: number,
     public itemName: string,
   ) { }
@@ -21,6 +22,7 @@ export class InventoryComponent implements OnInit {
   id: any
 
   inventories :any
+  restoname:any
 
   constructor(
     private route: ActivatedRoute,
@@ -30,6 +32,7 @@ export class InventoryComponent implements OnInit {
 
   ngOnInit() {
     this.id = sessionStorage.getItem('showInventory');
+    this.restoname = sessionStorage.getItem('RestoName');
     // this.id = this.route.snapshot.params['id'];
     this.retriveInventoryService.getInventory(this.id).subscribe(data=>{
       this.inventories = data;

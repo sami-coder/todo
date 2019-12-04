@@ -19,6 +19,7 @@ export class EntreeComponent implements OnInit {
 
   id: any
   entrees: any
+  restoName: any
 
 
   constructor(
@@ -29,6 +30,7 @@ export class EntreeComponent implements OnInit {
 
   ngOnInit() {
     this.getEntreeagain();
+    this.restoName=sessionStorage.getItem("RestoName");
 
   }
 
@@ -57,8 +59,9 @@ export class EntreeComponent implements OnInit {
     this.router.navigate(['add-entree']);
   }
 
-  showRecipe(entreeID){
+  showRecipe(entreeID, name){
     sessionStorage.setItem('entreeRecipeID',entreeID);
+    sessionStorage.setItem('DishName',name);
     this.router.navigate(['recipe']);
   }
 }

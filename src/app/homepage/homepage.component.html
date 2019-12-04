@@ -23,7 +23,7 @@
             <tr *ngFor="let inventory of inventories">
                 <td>{{inventory.name}}</td>
                 <td>{{inventory.item_name}}</td>
-                <td>{{inventory.quantity}}</td>
+                <td>{{inventory.quantity}} {{inventory.quantityType}}</td>
                 <!-- <td>{{inventory.threshold}}</td> -->
                 <!-- <td> <button (click)=editInv(inventory.id) class="btn btn-secondary"> Edit </button> </td> -->
                 <!-- <td> <button (click)=removeInv(inventory.id) class="btn btn-warning"> Delete </button> </td> -->

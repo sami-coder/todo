@@ -1,12 +1,13 @@
-<h1>My recipe</h1>
+<h1>Ingredients for {{recipeName}}</h1>
 
 <div class="container">
 <table class="table">
 <thead>
     <tr>
         <th>Id</th>
-        <th>Inventory Name</th>
+        <th>Ingredient Name</th>
         <th>Quantity</th>
+        <th>Quantity Type</th>
         <!-- <th>Entree ID</th>
         <th>Inventory ID</th> -->
         <th>Delete</th>
@@ -15,10 +16,12 @@
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let recipe of recipes">
-        <td>{{recipe.id}}</td>
+    <tr *ngFor="let recipe of recipes; let i=index">
+        <td>{{i+1}}</td>
+        <!-- <td>{{recipe.id}}</td> -->
         <td>{{recipe.name}}</td>
         <td>{{recipe.quantity}}</td>
+        <td>{{recipe.quantityType}}</td>
         <!-- <td>{{recipe.entree_domain_id}}</td>
         <td>{{recipe.inventory_domain_id}}</td> -->
         <td> <button (click)=removeRecipe(recipe.id) class="btn btn-warning"> Delete </button></td>
@@ -27,7 +30,7 @@
     </tr>
 </tbody>
 </table>
-<button class="btn btn-success" (click)=addRecipe() > Add new recipe </button>
+<button class="btn btn-success" (click)=addRecipe() > Add new ingredient </button>
 <button class="btn btn-success" (click)=goBack() > Done </button>
 
 

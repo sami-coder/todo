@@ -1,4 +1,4 @@
-<h1>My Menu</h1>
+<h1>{{restoName}}'s Menu </h1>
 
 <div class="container">
 <table class="table">
@@ -15,11 +15,12 @@
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let entree of entrees">
-        <td>{{entree.id}}</td>
+    <tr *ngFor="let entree of entrees; let i=index">
+        <td>{{i+1}}</td>
+        <!-- <td>{{entree.id}}</td> -->
         <td>{{entree.name}}</td>
         <td>${{entree.price}}</td>
-        <td> <button  (click)=showRecipe(entree.id) class="btn btn-primary"> Recipe </button></td>
+        <td> <button  (click)=showRecipe(entree.id,entree.name) class="btn btn-primary"> Recipe </button></td>
         <td> <button (click)=editEntree(entree.id) class="btn btn-secondary"> Edit </button> </td>
         <td> <button (click)=removeEntree(entree.id) class="btn btn-warning"> Delete </button></td>
         <!-- <td button (click)=showentree(restaurant.id) class="btn btn-success">View Entree</td> -->

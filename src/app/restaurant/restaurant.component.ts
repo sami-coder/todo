@@ -56,8 +56,9 @@ export class RestaurantComponent implements OnInit {
     });
 
   }
-  showentree(id){
+  showentree(id,name){
     sessionStorage.setItem('showEntree',id);
+    sessionStorage.setItem('RestoName',name);
     this.router.navigate(['entree'])
     sessionStorage.setItem('restaurantID',id);
   }
